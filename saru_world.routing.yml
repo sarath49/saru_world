@@ -1,0 +1,15 @@
+saru_world.hello:
+  path: '/saru-hello'
+  defaults:
+    _controller: '\Drupal\saru_world\Controller\SaruWorldController::helloworld'
+    _title: 'Saru Says Hello'
+  requirements:
+    _permission: 'access content'
+
+saru_world.greeting_form:
+  path: '/admin/config/saru-salutation-configuration'
+  defaults:
+    _form: '\Drupal\saru_world\Form\SalutationConfigurationForm'
+    _title: 'Salutation configuration'
+  requirements:
+    _permission: 'administer site configuration'

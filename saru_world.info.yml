@@ -1,0 +1,5 @@
+name: Saru World
+desciption: Saral World mdoule
+core: 8.x
+type: module
+package: Custom

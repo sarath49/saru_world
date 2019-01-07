@@ -1,0 +1,21 @@
+services:
+  saru_world.salutation:
+    class: Drupal\saru_world\Services\SaruWorldSalutation
+    arguments: ['@config.factory' , '@event_dispatcher']
+    tags:
+      - { name: saru_world_salutations }
+
+  saru_world.redirect_subscriber:
+    class: Drupal\saru_world\EventSubscriber\SaruWorldRedirectSubscriber
+    arguments: ['@current_user', '@current_route_match']
+    tags:
+    - {name: event_subscriber}
+
+  saru_world.logger.channel.saru_world:
+    parent: logger.channel_base
+    arguments: ['saru_world']
+
+  #saru_world.logger.saru_world:
+   # class: Drupal\hello_world\Logger\MailLogger
+   # tags:
+   # - { name: logger }
