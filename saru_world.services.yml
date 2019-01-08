@@ -15,7 +15,8 @@ services:
     parent: logger.channel_base
     arguments: ['saru_world']
 
-  #saru_world.logger.saru_world:
-   # class: Drupal\hello_world\Logger\MailLogger
-   # tags:
-   # - { name: logger }
+  saru_world.logger.saru_world:
+    class: Drupal\saru_world\Logger\MailLogger
+    arguments: ['@logger.log_message_parser', '@config.factory']
+    tags:
+    - { name: logger }
